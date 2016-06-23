@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 import Accounts from './accounts';
+import { Link, browserHistory } from 'react-router';
 
 class Header extends Component {
   onBinClick(event) {
     event.preventDefault();
-
-    Meteor.call('bins.insert');
+    // Meteor methods accept a callback function which is called only after the original method is done
+      // in thise case, after the bin has been created
+      // the arguments are always the same. the first is error. the second is whatever is returned by the Meteor method
+    Meteor.call('bins.insert', (error, binId) => {
+      browserHistory.push(`/bins/${binId}`);
+    });
   }
 
   render() {
