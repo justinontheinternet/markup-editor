@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import Accounts from './accounts';
 
 class Header extends Component {
@@ -12,7 +13,7 @@ class Header extends Component {
     return (
       <nav className="nav navbar-default">
         <div className="navbar-header">
-          <a className="navbar-brand">MarkBin</a>
+          <Link to="/" className="navbar-brand">MarkBin</Link>
         </div>
         <ul className="nav navbar-nav">
           <li>
