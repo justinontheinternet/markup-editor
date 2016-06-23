@@ -17,7 +17,7 @@ Meteor.methods({
   'bins.update': function(bin, newContent) {
     // need to use Mongo Modifier again
       // "in the Bins collection, update the bin with this id. set the value of content to be newContent"
-      // can rename newContent to content and use destructuring to condense code to '$set: { content }''
+      // can rename newContent to content (to match name in bins editor) and use destructuring to condense code to '$set: { content }''
     return Bins.update(bin._id, { $set: { content: newContent } })
   }
 });
